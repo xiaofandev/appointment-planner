@@ -3,8 +3,8 @@ import React from "react";
 export const ContactForm = ({
   name,
   setName,
-  phone,
-  setPhone,
+  phoneNumber,
+  setPhoneNumber,
   email,
   setEmail,
   handleSubmit
@@ -28,8 +28,8 @@ export const ContactForm = ({
             type="text"
             className="form-control"
             id="phone"
-            value={phone}
-            onChange={e => setPhone(e.target.value)}
+            value={phoneNumber}
+            onChange={e => setPhoneNumber(e.target.value)}
           />
         </div>
         <div className="form-group">
