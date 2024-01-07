@@ -17,6 +17,12 @@ export const AppointmentsPage = ({ contacts, appointments, addAppointment }) => 
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!title) {
+      alert("Please input Title");
+      return;
+    }
+
     /*
     Add contact info and clear data  
     */
