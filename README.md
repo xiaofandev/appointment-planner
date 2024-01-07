@@ -1,4 +1,4 @@
-#### Feature:
+#### Features:
 
 1. Add contact
 2. Show contact list.
