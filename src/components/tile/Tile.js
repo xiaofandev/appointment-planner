@@ -1,11 +1,19 @@
 import React from "react";
 
-const Tile = ({contact, index}) => {
+const Tile = ({tile, index, titleProName}) => {
+
   return (
-    <div className="tile-container">
-      <div className="tile tile-title">{contact.name}</div>
-      <div>{contact.phoneNumber}</div>
-      <div>{contact.email}</div>
+    <div className="tile-container" key={index}>
+      
+      {
+        Object.keys(tile).map(propName => {
+          if (propName === titleProName) {
+            return <div className="tile tile-title">{tile[propName]}</div>;
+          } else {
+            return <div>{tile[propName]}</div>;
+          }
+        })
+      }
     </div>
   );
 };
