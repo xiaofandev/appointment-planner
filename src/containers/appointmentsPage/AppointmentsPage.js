@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 import { TileList } from "../../components/tileList/TileList";
 import { getTodayString } from "../../utils/DateUtils";
+import { getCurrentTimeString } from "../../utils/TimeUtils";
 
 export const AppointmentsPage = ({ contacts, appointments, addAppointment }) => {
   /*
@@ -12,7 +13,7 @@ export const AppointmentsPage = ({ contacts, appointments, addAppointment }) => 
   const [title, setTitle] = useState('');
   const [contact, setContact] = useState('');
   const [date, setDate] = useState(getTodayString);
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState(getCurrentTimeString);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,8 +29,8 @@ export const AppointmentsPage = ({ contacts, appointments, addAppointment }) => 
 
     setTitle('');
     setContact('');
-    setDate('');
-    setTime('');
+    setDate(getTodayString);
+    setTime(getCurrentTimeString);
    
   };
 
