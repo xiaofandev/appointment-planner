@@ -24,6 +24,11 @@ export const AppointmentsPage = ({ contacts, appointments, addAppointment }) => 
       date,
       time
     });
+
+    setTitle('');
+    setContact('');
+    setDate('');
+    setTime('');
    
   };
 
@@ -47,6 +52,7 @@ export const AppointmentsPage = ({ contacts, appointments, addAppointment }) => 
       <hr />
       <section>
         <h2>Appointments</h2>
+        <TileList tiles={appointments} titlePropName="title"/>
       </section>
     </div>
   );
