@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 import { TileList } from "../../components/tileList/TileList";
+import { getTodayString } from "../../utils/DateUtils";
 
 export const AppointmentsPage = ({ contacts, appointments, addAppointment }) => {
   /*
@@ -10,7 +11,7 @@ export const AppointmentsPage = ({ contacts, appointments, addAppointment }) => 
   */
   const [title, setTitle] = useState('');
   const [contact, setContact] = useState('');
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState(getTodayString);
   const [time, setTime] = useState('');
 
   const handleSubmit = (e) => {
