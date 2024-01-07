@@ -1,4 +1,5 @@
 import React from "react";
+import { ContactPicker } from "../contactPicker/ContactPicker";
 
 const getTodayString = () => {
   const [month, day, year] = new Date()
@@ -8,6 +9,7 @@ const getTodayString = () => {
 };
 
 export const AppointmentForm = ({
+  contacts,
   title,
   setTitle,
   contact,
@@ -34,17 +36,7 @@ export const AppointmentForm = ({
           />
         </div>
         <div className="form-group"></div>
-        <div className="form-group">
-          <label htmlFor="contact">Contact</label>
-          <input
-            type="text"
-            className="form-control"
-            id="contact"
-            placeholder="Contact"
-            value={contact}
-            onChange={e => setContact(e.target.value)}
-          />
-        </div>
+        <ContactPicker contacts={contacts} contact={contact} setContact={setContact} />
         <div className="form-group"></div>
         <div className="form-group">
           <label htmlFor="date">Date</label>
